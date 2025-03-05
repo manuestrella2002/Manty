@@ -1,0 +1,139 @@
+/* Estilo general para la página de pedidos cerrados */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Título de la página */
+  h1 {
+    color: #333;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilo para la tabla de pedidos */
+  table {
+    width: 90%; /* Ajustamos el ancho de la tabla */
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    table-layout: auto; /* Hace que la tabla sea más responsiva */
+  }
+  
+  /* Encabezado de la tabla */
+  th {
+    background-color: #FF5733;  /* Color distinto para indicar que son pedidos cerrados */
+    color: white;
+    padding: 12px;
+    font-size: 1.1rem;
+    text-align: left;
+    text-transform: uppercase;
+    word-wrap: break-word; /* Asegura que los textos largos se ajusten */
+  }
+  
+  /* Celdas de la tabla */
+  td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+    word-wrap: break-word; /* Asegura que los textos largos se ajusten */
+  }
+  
+  /* Estilo para las filas pares (zebra effect) */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para las filas al pasar el ratón (hover) */
+  tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Estilo para los botones de acción */
+  .btn-reopen {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1.3rem;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .btn-close {
+    background: none;
+    border: none;
+    cursor: not-allowed;  /* Deshabilitamos el botón de cierre */
+    margin-right: 10px;
+    font-size: 1.3rem;
+    color: #999;  /* Cambia el color para indicar que no se puede hacer más */
+    pointer-events: none;  /* Desactiva cualquier interacción */
+  }
+  
+  /* Cambiar color al pasar el ratón sobre los botones de acción */
+  .btn-reopen:hover {
+    color: #ffee00;
+  }
+  
+  .btn-close:hover {
+    color: #999;  /* No cambia de color para el botón deshabilitado */
+  }
+  
+  /* Media Queries para Responsividad */
+  
+  /* En pantallas más pequeñas (teléfonos móviles) */
+  @media (max-width: 480px) {
+    /* Título */
+    h1 {
+      font-size: 1.8rem;
+      margin-top: 10px;
+    }
+  
+    /* Ajustar la tabla para pantallas pequeñas */
+    table {
+      width: 100%; /* La tabla ocupa el 100% del ancho disponible */
+      font-size: 0.9rem; /* Reduce el tamaño de la fuente para mejorar la visibilidad */
+      table-layout: auto; /* Permite que las columnas se ajusten automáticamente */
+    }
+  
+    th, td {
+      padding: 8px; /* Reduce el padding para aprovechar el espacio disponible */
+      font-size: 0.9rem; /* Reduce el tamaño de la fuente en celdas */
+    }
+  
+    /* Reducción de tamaño de los botones */
+    .btn-edit, .btn-close {
+      font-size: 1rem; /* Ajusta el tamaño de los botones */
+    }
+  
+    /* Ajustar la altura de las filas */
+    tr {
+      height: 40px;
+    }
+  }
+  
+  /* En pantallas medianas (tabletas) */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem; /* Ajusta el tamaño del título */
+    }
+  
+    table {
+      width: 90%; /* Ajusta el tamaño de la tabla */
+    }
+  
+    .btn-edit, .btn-close {
+      font-size: 1.2rem; /* Ajusta el tamaño de los botones */
+    }
+  }
+  

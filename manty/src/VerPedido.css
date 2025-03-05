@@ -1,0 +1,227 @@
+/* Contenedor principal del pedido */
+.pedido-container {
+    width: 60%;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-top: 10px; /* Ajusta este valor según sea necesario */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Subtítulos */
+h2 {
+    color: #555;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+h3 {
+    color: #777;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Grupo de información */
+.pedido-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.pedido-group:last-child {
+    border-bottom: none;
+}
+
+/* Etiquetas */
+.pedido-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Campos de texto (solo lectura) */
+.pedido-info {
+    width: 95%;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #555;
+    cursor: default;
+}
+
+/* Área de texto para descripción */
+.pedido-descripcion {
+    height: 80px;
+    resize: none;
+}
+
+/* Botones */
+.boton-imprimir, .boton-volver {
+    display: block;
+    width: 100%; /* Asegura que ambos botones ocupen todo el ancho disponible */
+    padding: 12px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box; /* Asegura que padding no afecte al tamaño del contenedor */
+}
+
+/* Botón Imprimir */
+.boton-imprimir {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-imprimir:hover {
+    background-color: #0056b3;
+}
+
+/* Botón Volver */
+.boton-volver {
+    background-color: #6c757d;
+    color: white;
+}
+
+.boton-volver:hover {
+    background-color: #5a6268;
+}
+
+/* Agrega esto en tu archivo VerPedido.css */
+
+/* Ocultar botones en la vista de impresión */
+/* Ocultar el navbar en la vista de impresión */
+/* Estilos para la impresión */
+@media print {
+    /* Ocultar el navbar (si es necesario) */
+    .navbar {
+        display: none;
+    }
+
+    /* Ocultar los botones de impresión y volver */
+    .boton-imprimir, .boton-volver {
+        display: none;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #footer {
+        position: absolute;
+        bottom: 0;
+      }
+
+    /* Ajustar el contenedor principal del pedido */
+    .pedido-container {
+        width: 100%;
+        padding: 10px;
+        margin: 10;
+    }
+
+    /* Evitar que el navegador agregue encabezado y pie de página por defecto */
+    @page {
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+    }
+}
+/* Estilos Responsivos para Dispositivos Móviles */
+@media (max-width: 768px) {
+    /* Ajustes para pantallas pequeñas, como tablets y teléfonos */
+    .pedido-container {
+        width: 90%; /* Más ancho en dispositivos pequeños */
+        margin-top: 30px; /* Menos margen superior */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Título más pequeño */
+    }
+
+    h2 {
+        font-size: 1.3rem; /* Subtítulo más pequeño */
+    }
+
+    h3 {
+        font-size: 1.1rem; /* Subtítulo más pequeño */
+    }
+
+    /* Ajustar los campos de texto */
+    .pedido-info {
+        font-size: 0.9rem; /* Reducir el tamaño de fuente */
+    }
+
+    /* Ajustar los botones */
+    .boton-imprimir, .boton-volver {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para los botones */
+        padding: 10px;
+    }
+
+    /* Reducir márgenes de los grupos de información */
+    .pedido-group {
+        margin-bottom: 10px; /* Menos espacio entre los grupos */
+    }
+
+    /* Reducir el tamaño de la descripción */
+    .pedido-descripcion {
+        height: 60px; /* Ajusta la altura de la descripción */
+    }
+}
+
+/* Estilos para dispositivos móviles muy pequeños */
+@media (max-width: 480px) {
+    /* Ajuste adicional para pantallas de teléfono muy pequeñas */
+    .pedido-container {
+        width: 95%; /* Muy cerca del borde en pantallas pequeñas */
+        margin-top: 20px; /* Menos margen superior */
+    }
+
+    h1 {
+        font-size: 1.4rem; /* Título aún más pequeño */
+    }
+
+    h2 {
+        font-size: 1.1rem; /* Subtítulo más pequeño */
+    }
+
+    h3 {
+        font-size: 1rem; /* Subtítulo más pequeño */
+    }
+
+    /* Ajustar los campos de texto */
+    .pedido-info {
+        font-size: 0.8rem; /* Reducir más el tamaño de fuente */
+    }
+
+    .boton-imprimir, .boton-volver {
+        font-size: 0.9rem; /* Reducir más el tamaño de fuente de los botones */
+        padding: 8px;
+    }
+}

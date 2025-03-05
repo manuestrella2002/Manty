@@ -1,0 +1,174 @@
+/* navbar.css */
+
+/* Estilo base para la barra de navegación */
+.navbar {
+  background-color: #333;
+  padding: 1rem 0;
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 180px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Estilo para el menú de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f0a500;
+}
+
+/* Estilos del botón hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-toggle div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Animación del botón hamburguesa cuando está abierto */
+.menu-toggle.open div:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open div:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Responsividad para tablets y móviles */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Sección de navegación cambia a columna */
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Se oculta el menú de navegación por defecto */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Activamos el menú cuando se agrega la clase "active" */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+
+  /* Mostramos el botón hamburguesa */
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Ajustes para móviles pequeños */
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-image {
+    width: 150px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu-toggle div {
+    width: 25px;
+  }
+}
