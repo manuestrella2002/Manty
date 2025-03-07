@@ -16,7 +16,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleAreaClick = (area) => {
-    navigate(`/${encodeURIComponent(area)}`);
+    navigate(`/PedidosAreas/${encodeURIComponent(area)}`);
   };
 
   return (
@@ -28,6 +28,10 @@ const Sidebar = () => {
             {area}
           </li>
         ))}
+        {/* Opción "Todos" para volver a inicio */}
+        <li key="todos" onClick={() => navigate("/")} className="todos">
+          Todos
+        </li>
       </ul>
     </div>
   );

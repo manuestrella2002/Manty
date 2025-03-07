@@ -1,0 +1,134 @@
+/* Estilo general para la página de inicio */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Título de la página */
+  h1 {
+    color: #333;
+    font-size: 1.5rem ; 
+    text-align: center;
+    margin-top: 100px !important; /* Aumenté el margen superior para darle más espacio */
+    margin-bottom: 20px !important;
+    visibility: visible; /* Asegúrate de que esté visible */
+  }
+  
+  /* Estilo para la tabla de pedidos */
+  table {
+    width: 90%; /* Ajustamos el ancho de la tabla */
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    table-layout: auto; /* Hace que la tabla sea más responsiva */
+  }
+  
+  /* Encabezado de la tabla */
+  th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px; /* Aumenté el padding para igualarlo al otro código */
+    font-size: 1.1rem !important; 
+    text-align: left;
+    text-transform: uppercase;
+    word-wrap: break-word;
+  }
+  
+  /* Celdas de la tabla */
+  td {
+    padding: 12px; /* Asegúrate de que el padding sea el mismo */
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+    word-wrap: break-word;
+  }
+  
+  tr {
+    height: auto; /* Asegura que la altura de la fila se ajuste al contenido */
+    line-height: normal; /* Evita espacios extra */
+  }
+  /* Estilo para las filas pares (zebra effect) */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para las filas al pasar el ratón (hover) */
+  tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Estilo para los botones de acción */
+  td button {
+    display: inline-block; /* Asegura que los botones estén en la misma línea */
+    margin-right: 8px; /* Espaciado entre los botones */
+    padding: 6px 10px; /* Tamaño de los botones */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.0rem;
+    color: #333;
+    transition: color 0.3s;
+  }
+  /* Ajuste del contenido para que no se superponga con la sidebar */
+  .content {
+    margin-left: 220px; /* Debe coincidir con el ancho del sidebar */
+    padding: 20px;
+  }
+  
+  
+  
+  /* Media Queries para Responsividad */
+  
+  /* En pantallas más pequeñas (teléfonos móviles) */
+  @media (max-width: 480px) {
+    /* Título */
+    h1 {
+      font-size: 1.8rem;
+      margin-top: 10px;
+    }
+  
+    /* Ajustar la tabla para pantallas pequeñas */
+    table {
+      width: 100%; /* La tabla ocupa el 100% del ancho disponible */
+      font-size: 0.9rem; /* Reduce el tamaño de la fuente para mejorar la visibilidad */
+      table-layout: auto; /* Permite que las columnas se ajusten automáticamente */
+    }
+  
+    th, td {
+      padding: 8px; /* Reduce el padding para aprovechar el espacio disponible */
+      font-size: 0.9rem; /* Reduce el tamaño de la fuente en celdas */
+    }
+  
+    /* Reducción de tamaño de los botones */
+    td button {
+      font-size: 1rem; /* Ajusta el tamaño de los botones */
+    }
+  
+    /* Ajustar la altura de las filas */
+    tr {
+      height: 40px;
+    }
+  }
+  
+  /* En pantallas medianas (tabletas) */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem; /* Ajusta el tamaño del título */
+    }
+  
+    table {
+      width: 90%; /* Ajusta el tamaño de la tabla */
+    }
+  
+    td button {
+      font-size: 1.2rem; /* Ajusta el tamaño de los botones */
+    }
+  }
+  

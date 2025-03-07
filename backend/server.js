@@ -34,6 +34,29 @@ app.get('/api/pedidos', async (req, res) => {
     res.status(500).json({ error: 'Error al obtener los pedidos' });
   }
 });
+
+app.get('/api/pedidos/area/:area_pedido', async (req, res) => {
+  try {
+    const area_pedido = req.params.area_pedido; // Asegurando que se recibe el parámetro correctamente
+    console.log(`Área recibida: ${area_pedido}`); // Debugging
+
+    const [result] = await db.query(
+      'SELECT * FROM pedido WHERE area_pedido = ? AND estado_pedido = "Abierto" ORDER BY fecha_pedido DESC',
+      [area_pedido]
+    );
+
+    if (result.length === 0) {
+      return res.status(404).json({ error: `No hay pedidos abiertos en el área: ${area_pedido}` });
+    }
+
+    res.json(result);
+  } catch (error) {
+    console.error(`Error al obtener los pedidos del área ${req.params.area_pedido}:`, error);
+    res.status(500).json({ error: `Error al obtener los pedidos del área ${req.params.area_pedido}` });
+  }
+});
+
+
 // 🟢 Endpoint para obtener todos los pedidos cerrados
 app.get('/api/pedidos/cerrados', async (req, res) => {
   try {

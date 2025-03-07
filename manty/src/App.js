@@ -7,6 +7,8 @@ import NuevoPedido from './NuevoPedido';
 import PedidosCerrados from './PedidosCerrados';
 import VerPedido from './VerPedido';
 import ModificarPedido from './ModificarPedido';
+import PedidosAreas from './PedidosAreas';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
         <Route path="/PedidosCerrados" element={<PedidosCerrados />} />
         <Route path="/VerPedido/:id" element={<VerPedido />} />  {/* 👈 Asegúrate de que está bien */}
         <Route path="/ModificarPedido/:id" element={<ModificarPedido />} />  {/* 👈 Asegúrate de que está bien */}
+        <Route path="/PedidosAreas/:area" element={<PedidosAreas />} />  {/* 👈 Asegúrate de que está bien */}
         </Routes>
         </Router>
         </div>
