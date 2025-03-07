@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Inicio.css';
 import { FaCheck, FaEdit, FaPrint } from 'react-icons/fa'; // Importamos los iconos
 import { useNavigate } from 'react-router-dom';
-
+import Sidebar from './SideBar.js';
 
 
 const Inicio = () => {
@@ -89,48 +89,51 @@ const Inicio = () => {
 
   return (
     <div>
-  <h1>Trabajos Abiertos</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Fecha</th>
-        <th>Descripción</th>
-        <th>Lugar</th>
-        <th>Solicitado por</th>
-        <th>Área</th>
-        <th>Estado</th>
-        <th>Acciones</th> {/* Nueva columna para las acciones */}
-      </tr>
-    </thead>
-    <tbody>
-      {/* Mapeamos los pedidos y los mostramos */}
-      {pedidosAbiertos.map((pedido) => (
-        <tr key={pedido.idpedido}>
-          <td>{`Roffo-DMI-${pedido.idpedido}`}</td>  {/* Formato del id */}
-          <td>{formatDate(pedido.fecha_pedido)}</td> {/* Mostramos la fecha y hora formateada */}
-          <td>{pedido.descripcion_pedido}</td>
-          <td>{pedido.lugar_pedido}</td>
-          <td>{pedido.solicitadopor_pedido}</td>
-          <td>{pedido.area_pedido}</td>
-          <td>{pedido.estado_pedido}</td>
-          <td>
-            <button onClick={() => handleEdit(pedido.idpedido)} className="btn-action">
-              <FaEdit /> {/* Icono de editar */}
-            </button>
-            <button onClick={() => handlePrint(pedido.idpedido)} className="btn-action">
-              <FaPrint /> {/* Icono de imprimir */}
-            </button>
-            <button onClick={() => handleClose(pedido.idpedido)} className="btn-action">
-              <FaCheck /> {/* Icono de cerrar */}
-            </button>
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
+      <Sidebar />
+      <div className="content">
+        <h1>Trabajos Abiertos</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Descripción</th>
+              <th>Lugar</th>
+              <th>Solicitado por</th>
+              <th>Área</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pedidosAbiertos.map((pedido) => (
+              <tr key={pedido.idpedido}>
+                <td>{`Roffo-DMI-${pedido.idpedido}`}</td>
+                <td>{formatDate(pedido.fecha_pedido)}</td>
+                <td>{pedido.descripcion_pedido}</td>
+                <td>{pedido.lugar_pedido}</td>
+                <td>{pedido.solicitadopor_pedido}</td>
+                <td>{pedido.area_pedido}</td>
+                <td>{pedido.estado_pedido}</td>
+                <td>
+                  <button onClick={() => handleEdit(pedido.idpedido)} className="btn-action">
+                    <FaEdit />
+                  </button>
+                  <button onClick={() => handlePrint(pedido.idpedido)} className="btn-action">
+                    <FaPrint />
+                  </button>
+                  <button onClick={() => handleClose(pedido.idpedido)} className="btn-action">
+                    <FaCheck />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
+  
 };
 
 export default Inicio;

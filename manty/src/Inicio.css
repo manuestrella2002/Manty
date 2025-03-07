@@ -76,6 +76,11 @@ td button {
   color: #333;
   transition: color 0.3s;
 }
+/* Ajuste del contenido para que no se superponga con la sidebar */
+.content {
+  margin-left: 220px; /* Debe coincidir con el ancho del sidebar */
+  padding: 20px;
+}
 
 
 
