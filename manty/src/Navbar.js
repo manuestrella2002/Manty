@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importa Link de React Router
+import { Link } from "react-router-dom"; // Usamos useNavigate para redirigir
 import "./Navbar.css"; // Importamos el archivo CSS
 import logo from "./recursos/imagenes/LOGO-UBAROFFO.png"; // Ruta al logo, ajusta según la ubicación de tu archivo
 
 const Navbar = () => {
+
+
+
   return (
     <nav className="navbar">
       <div className="container">
@@ -18,6 +21,7 @@ const Navbar = () => {
           <li><Link to="/">Inicio</Link></li>
           <li><Link to="/NuevoPedido">Nuevo Pedido</Link></li>
           <li><Link to="/PedidosCerrados">Pedidos cerrados</Link></li>
+          
         </ul>
       </div>
     </nav>

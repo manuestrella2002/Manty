@@ -17,6 +17,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
+        
         <Route path="/" element={<Inicio />} />
         <Route path="/NuevoPedido" element={<NuevoPedido />} />
         <Route path="/PedidosCerrados" element={<PedidosCerrados />} />
